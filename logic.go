@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+
+	//รับค่าจาก input
 	var number uint
 	fmt.Print("Enter your number : ")
 	fmt.Scanf("%d", &number)
@@ -33,8 +35,6 @@ func main() {
 
 	// loop เช็คตัวอักษรติดกันห้าม เลขเดียวกัน
 	var keepnumber uint
-	// var keepnumberplus uint
-	// var keepnumberminus uint
 	tmpresult := map[uint]uint{}
 	for index, number := range tmp_number {
 
@@ -53,13 +53,14 @@ func main() {
 				Check_digit_digit_two = tmp_number[index+1]
 			}
 
-			//ตัวมันเอง +1 , -1
+			//เลขตัวมันเอง +1 , -1
 			var Number_plus = number + 1
 			var Number_minus = number - 1
 
 			// fmt.Println("บวก ROUND : ", number, " => ตัวเลขก่อนหน้ามัน ", Check_digit_digit_one, " ตัวเลขมันบวกหนึ่ง ", Number_plus, ", ตัวเลขหลังมัน ", Check_digit_digit_two)
 			// fmt.Println("ลบ ROUND : ", number, " => ตัวเลขก่อนหน้ามัน ", Check_digit_digit_one, " , ตัวเลขมันลบหนึ่ง ", Number_minus, " , ตัวเลขหลังมัน ", Check_digit_digit_two)
 
+			// (ข้อ3) เลขห้ามเรียงทั้ง จากมากไปน้อย และ จากน้อยไปมาก
 			if (Number_plus == Check_digit_digit_two && Number_minus == Check_digit_digit_one) ||
 				(Number_plus == Check_digit_digit_one && Number_minus == Check_digit_digit_two) {
 				fmt.Println("Error : Number of tiers ")
@@ -72,7 +73,7 @@ func main() {
 			tmpresult[number] = tmpresult[number] + 1
 		}
 
-		// เก็บตัวเลขเอาไว้ก่อนหน้า
+		// เก็บตัวเลขก่อนหน้าเอาไว้
 		keepnumber = number
 	}
 
@@ -83,9 +84,9 @@ func main() {
 	}
 
 	// (ข้อ2) check ซ้ำกันสองตัวไม่ให้ผ่าน , แต่มากกว่าสองตัวผ่าน
-	for number, count := range tmpresult {
+	for _, count := range tmpresult {
 		if count > 2 {
-			fmt.Println("Error : Number duplicate number is => ", number)
+			fmt.Println("Error : Number duplicate number")
 			return
 		}
 	}
