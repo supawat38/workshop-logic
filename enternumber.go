@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func ExamEnternumber() {
 
 	//รับค่าจาก input
 	var number uint
