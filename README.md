@@ -1,3 +1,3 @@
 # workshop-logic
 
-go run logic.go
+go run main.go
