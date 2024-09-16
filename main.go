@@ -10,7 +10,7 @@ package main
 func main() {
 	// ExamChannel()
 	// ExamReverse()
-	ExamAeiou()
+	// ExamAeiou()
 	// ExamSplitTextFirstAndLast()
 	// ExamRegexp()
 	// ExamRecursiveString()
@@ -24,4 +24,6 @@ func main() {
 	// ExamMinimumPointer()
 	// ExamCompareTemperature()
 	// ExamRobotDoubleText()
+	// ExamBalanceBank()
+	// ExamGeometricSeq()
 }
